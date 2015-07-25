@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="metadata">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="title" type="xsd:string"/>
+        <xsd:element name="number" type="xsd:string"/>
+        <xsd:element name="identifier" type="xsd:string"/>
+        <xsd:element name="creator" type="xsd:string"/>
+        <xsd:element name="subject" type="xsd:string"/>
+        <xsd:element name="description" type="xsd:string" textarea="true"/>
+        <xsd:element name="docType">
+          <xsd:simpleType>
+            <xsd:restriction base="string">
+              <xsd:enumeration value="Undang-Undang Dasar 1945"/>
+              <xsd:enumeration value="TapMPR"/>
+              <xsd:enumeration value="Undang-Undang"/>
+              <xsd:enumeration value="Peraturan Pengganti Undang-Undang"/>
+              <xsd:enumeration value="Peraturan Pemerintah"/>
+              <xsd:enumeration value="Peraturan Presiden"/>
+              <xsd:enumeration value="Peraturan Menteri"/>
+              <xsd:enumeration value="Peraturan Daerah"/>
+              <xsd:enumeration value="Peraturan Daerah Khusus"/>
+              <xsd:enumeration value="Qanun"/>
+              <xsd:enumeration value="Instruksi Presiden"/>
+              <xsd:enumeration value="Keputusan Presiden"/>
+              <xsd:enumeration value="Keputusan Menteri"/>
+              <xsd:enumeration value="Keputusan Gubernur"/>
+              <xsd:enumeration value="Keputusan Walikota"/>
+              <xsd:enumeration value="Keputusan Bupati"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="originalFilename" type="xsd:string"/>
+        <xsd:element name="filename" type="xsd:string"/>
+        <xsd:element name="publishedDate" type="xsd:date"/>
+        <xsd:element name="validDate" type="xsd:date"/>
+        <xsd:element name="enactment">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="number" type="xsd:string"/>
+              <xsd:element name="publishedDate" type="xsd:date"/>
+              <xsd:element name="type">
+                <xsd:simpleType>
+                  <xsd:restriction base="string">
+                    <xsd:enumeration value="Lembaran Negara Republik Indonesia"/>
+                    <xsd:enumeration value="Tambahan Lembaran Negara Republik Indonesia"/>
+                    <xsd:enumeration value="Berita Negara Republik Indonesia"/>
+                    <xsd:enumeration value="Tambahan Berita Negara Republik Indonesia"/>
+                    <xsd:enumeration value="Lembaran Daerah"/>
+                    <xsd:enumeration value="Tambahan Lembaran Daerah"/>
+                    <xsd:enumeration value="Berita Daerah"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="identifier" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="unappliedEffect" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="docNumber" type="xsd:string"/>
+              <xsd:element name="status" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
